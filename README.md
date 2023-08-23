@@ -10,6 +10,14 @@ $ ffuf -c -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt
 $ ffuf -c -w /usr/share/wordlists/seclists/Fuzzing/4-digits-0000-9999.txt -u http://<RHOST>/backups/backup_2020070416FUZZ.zip
 ```
 
+### Fuzzing the name of files
+
+You found `https://test.com/portal/api/uploads/241241451252/content`, Go for this: 
+
+```
+ffuf -w num6.txt -u https://test.com/portal/api/uploads/FUZZ/content -mc 200
+```
+
 ### API Fuzzing
 
 ```c
